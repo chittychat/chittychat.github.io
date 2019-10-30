@@ -2,41 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ChittyChat</title>
-    <link rel="stylesheet" href="styles/chat.css">
+    <meta name="description" content="ChittyChat: ChittyChat to stay in touch with friends and family, anytime and anywhere. ChittyChat is free and offers simple, secure, reliable messaging and calling, available on phones all over the world.">
+    <meta name="theme-color" content="#282875">
+    <meta name="msapplication-navbutton-color" content="#282875">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:title" content="ChittyChat">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#282875">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- <meta name="google-site-verification" content=""/> -->
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="shortcut icon" type="image/png" href="./images/chittychat.ico"/>
+    <link rel="stylesheet" href="./styles/chat.css">
 </head>
 <body>
-    <div class="gradient">
-        <div class="under-alert"><span>Under construction!</span></div>
+    <div class="home">
         <header>
             <div class="container">
-                <span class="logo">Chitty<span>Chat</span></span>
+                <div class="menu-bar"></div>
+                <a class="logo" href="/">
+                    <span class="logo-icon"></span>
+                    <span class="logo-text-chitty hide-mobile">Chitty</span>
+                    <span class="logo-text-chat hide-mobile">Chat</span>
+                </a>
             </div>
         </header>
         <div class="content">
             <div class="container">
-                <div class="left-panel">
-                    <img src="https://dummyimage.com/280x480/fff/000" class="chittychat-mobile" alt="chittychat"/>
-                </div>
-                <div class="right-panel">
-                    <h4>Connecting people with calls, chats, and more...</h4>
-                    <a href="#">Android</a>
-                    <a href="#">App Store</a>
-                </div>
+                <section class="story-1">
+                    <div>
+                        <h1>Chats, Calls, Moments,</h1>
+                        <h2>&amp; Discover more in</h2>
+                        <h3>One platform.</h3>
+                        <h4 class="mtb-15">One platform that connects a billion people with chating, calling, sharing files and moments, and more...</h4>
+                        <h5 class="mb-10">Download available soon.</h5>
+                        <div>
+                            <a href="#" class="app-store appstore"></a>
+                            <a href="#" class="app-store playstore"></a>
+                        </div>
+                    </div>
+                </section>
+                <section class="story-2">
+                    <div class="scenery">
+                        <div class="app-icon"></div>
+                        <div class="chats-board">
+                            <div class="left">
+                                <span class="msg">Hello James</span>
+                            </div>
+                            <div class="right">
+                                <span class="msg">Hi Andri</span>
+                            </div>
+                            <div class="left">
+                                <span class="msg">How are you?</span>
+                            </div>
+                            <div class="right">
+                                <span class="msg">I am good Andri, How are you?</span>
+                            </div>
+                            <div class="right">
+                                <span class="msg">How is going your work?</span>
+                            </div>
+                            <div class="left">
+                                <span class="msg">I am good James, thanks.</span>
+                            </div>
+                            <div class="left">
+                                <span class="msg">Work also good.</span>
+                            </div>
+                            <div class="right">
+                                <span class="msg">...</span>
+                            </div>
+                            <div class="left">
+                                <span class="msg">...</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-        <footer>
-            <div class="container">
-                <ul>
-                    <li>About</li>
-                    <li>Terms of service</li>
-                    <li>Privacy policy</li>
-                </ul>
-                <p class="copy-rights">Copyright &copy; 2019 ChittyChat - All Rights Reserved.</p>
-            </div>
-        </footer>
     </div>
+    <footer>
+        <div class="container">
+            <p>
+                <span class="copy-rights">Copyright &copy; 2019 ChittyChat.in - All Rights Reserved.</span>
+            </p>
+        </div>
+    </footer>
+    <script src="./javascripts/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let window_height_outer = $(window).outerHeight();
+            let window_height;
+            let app_header_height;
+            let app_footer_height;
+            let set_height_story_one;
+            function set_story_one_height () {
+                window_height = $(window).height();
+                app_header_height = $("header").outerHeight();
+                app_footer_height = $("footer").outerHeight();
+                set_height_story_one = $(".story-1");
+                set_height_story_one.css("min-height", window_height - app_header_height - app_footer_height);
+                console.log('test');
+            }
+            if (window_height_outer < 1023) {
+                // set_story_one_height();
+                $( window ).resize(function() {
+                    // set_story_one_height();
+                });
+            }
+        });
+    </script>
 </body>
 </html>

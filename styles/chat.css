@@ -1,6 +1,55 @@
+@font-face {
+    font-family: 'montserratlight';
+    src: url('../fonts/montserrat-light.woff2') format('woff2'),
+         url('../fonts/montserrat-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratmedium';
+    src: url('../fonts/montserrat-medium.woff2') format('woff2'),
+         url('../fonts/montserrat-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular.woff2') format('woff2'),
+         url('../fonts/montserrat-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratsemibold';
+    src: url('../fonts/montserrat-semibold.woff2') format('woff2'),
+         url('../fonts/montserrat-semibold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratbold';
+    src: url('../fonts/montserrat-bold.woff2') format('woff2'),
+         url('../fonts/montserrat-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratextrabold';
+    src: url('../fonts/montserrat-extrabold.woff2') format('woff2'),
+         url('../fonts/montserrat-extrabold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratblack';
+    src: url('../fonts/montserrat-black.woff2') format('woff2'),
+         url('../fonts/montserrat-black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 html {
     box-sizing: border-box;
-    line-height: 1.4;
+    line-height: 1.2;
 }
 *,
 *::after,
@@ -20,142 +69,282 @@ ul {
 img {
     max-width: 100%;
 }
+.hide {
+    display: none !important;
+}
+.show-mobile {
+    display: inline-block !important;
+}
+.hide-mobile {
+    display: none !important;
+}
+.pull-right {
+    float: right !important;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #8cc63e;
+}
+.white-bg,
+.black-bg {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.white-bg {
+    background-color: #fff;
+    color: #000;
+}
+.black-bg {
+    background-color: #000;
+    color: #fff;
+}
+.mtb-15 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.mb-15 {
+    margin-bottom: 15px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.app-store {
+    overflow: hidden;
+    width: 168px;
+    height: 51px;
+    background-size: 100% auto !important;
+}
+.appstore {
+    background: url('./../images/app-store-apple.svg') no-repeat;
+}
+.playstore {
+    background: url('./../images/google-play-icon.svg') no-repeat;
+}
 /* reset ends */
 body {
     font-size: 16px;
-    font-family: monospace;
-    background-color: #eee;
-    color: #333;
+    font-family: 'montserratlight', arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
 }
 .container {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
 }
-/**/
-.gradient {
-    background-image: linear-gradient(to right bottom, #845ec2, #946bd1, #a478e0, #b485ef, #c493ff);
-    background-repeat: no-repeat;
-}
-/**/
 /* Sticky lander */
 html,
 body {
     height: 100%;
 }
-body > div {
+.home {
     min-height: 100%;
+    margin-bottom: -50px;
 }
-header,
-footer {
-    height: 85px;
+.home::after {
+    content: "";
+    display: block;
 }
-.content {
-    height: calc(100% - 170px);
+footer,
+.home:after {
+    height: 50px;
 }
 /* Sticky lander ends */
-/* common controllers */
-.under-alert {
-    position: fixed;
-    top: 50px;
-    right: 0;
-    left: 0;
-    padding: 20px;
-    font-size: 20px;
+/* header and footer styles */
+header {
+    height: 158px;
+    padding: 10px 15px;
     text-align: center;
 }
-.under-alert span {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    animation: underBlinking 2s infinite both;
+.menu-bar {
+    height: 50px;
 }
-@keyframes underBlinking {
-    0% {background-color: #fff; color: #000; }
-    50% {background-color: #000; color: #fff; }
-    100% {background-color: #fff; color: #000; }
+.logo-icon {
+    width: 77px;
+    height: 77px;
+    display: inline-block;
+    background: url('./../images/chittychat-icon.png') no-repeat;
+    background-size: 100% auto;
 }
-/* header */
-.logo {
-    font-size: 22px;
-    line-height: 85px;
-    color: #fff;
-}
-.logo span {
-    padding-left: 2px;
-    color: rgba(255,255,255,0.4);
-}
-/* header ends */
-
-/* footer */
 footer {
     text-align: center;
-    overflow: hidden;
-    font-size: 13px;
-    padding: 15px 0;
-    color: #fff;
+    padding: 18px 15px;
+    font-size: 10px;
+    font-family: 'montserratmedium', arial, sans-serif;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
 }
-footer ul,
-.copy-rights {
-    display: inline;
+/* header and footer styles ends */
+header,
+.story-1 {
+    background-color: #9ddaed;
 }
-footer li {
-    display: inline-block;
-    margin-right: -7px;
-    padding: 0 5px;
-    line-height: 1.2;
-    border-right: 1px solid #eee;
-}
-footer ul li:last-child {
-    border-right: none;
-}
-.copy-rights {
-    padding: 0 20px;
-}
-/* footer ends */
-
-/* main content */
-.content .container {
+.story-1 {
+    padding: 0 30px 30px;
     text-align: center;
-    color: #fff;
 }
-.content h4 {
-    font-weight: normal;
-    font-size: 32px;
+.story-1 h1,
+.story-1 h2,
+.story-1 h3 {
+    font-size: 24px;
+    font-family: 'montserratbold', arial, sans-serif;
 }
-.chittychat-mobile {
+.story-1 h4 {
+    line-height: 1.4;
+}
+.story-1 h5 {
+    font-size: 20px;
+    font-family: 'montserratsemibold', arial, sans-serif;
+}
+.story-1 .app-store {
+    opacity: 0.2;
+    pointer-events: none;
+}
+.story-2 {
+    padding: 20px 15px 50px;
+    background: rgb(157,218,237);
+    background: linear-gradient(180deg, rgba(157,218,237,1) 0%, rgba(255,255,255,1) 50%);
+}
+.story-2 .scenery {
+    position: relative;
+    width: 280px;
+    height: 480px;
+    margin: 0 auto;
+    background: #fff url('./../images/chittychat-illustration.svg') center no-repeat;
+    background-size: auto 130%;
+    background-position: -572px top;
+    border-radius: 20px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.24);
+    border: solid #000;
+    border-width: 10px;
+}
+.story-2 .app-icon {
+    position: absolute;
+    z-index: 0;
+    top: 20px;
+    left: 50%;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background: url('./../images/chittychat-logo.svg') no-repeat;
+    background-size: 100% auto;
+}
+.chats-board {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px 40px 10px;
+    background-color: rgba(0,0,0,0.14);
+    border-radius: 10px;
+    overflow: auto;
+}
+.chats-board > div {
+    margin-bottom: 14px;
+}
+.chats-board .msg {
+    padding: 5px 12px;
+    font-size: 13px;
+    background-color: #fff;
     border-radius: 5px;
-    box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 0 3px rgba(0,0,0,0.24);
 }
-/* main content ends */
-
+.chats-board .left {
+    text-align: left;
+}
+.chats-board .right {
+    text-align: right;
+}
+.left .msg {
+    border-radius: 12px 12px 12px 5px;
+}
+.right .msg {
+    border-radius: 12px 12px 5px 12px;
+}
 /* media query */
-@media only screen and (min-width: 540px) {
-    .under-alert {
-        top: 0;
+/* tablet */
+@media only screen and (min-width: 680px) {
+    .hide-mobile {
+        display: inline-block !important;
     }
-    .content .container {
-        max-width: 900px;
-        padding: 0 15px;
+    header .container {
         overflow: hidden;
-    }
-    .content .left-panel,
-    .content .right-panel {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: -7px;
-    }
-    .content .left-panel {
-        width: 40%;
-        text-align: right;
+        padding-left: 15px;
         padding-right: 15px;
     }
-    .content .right-panel {
-        width: 60%;
+    .app-store {
+        margin-right: 6px;
+    }
+    header {
+        position: relative;
+        z-index: 1;
+        height: 60px;
+        padding: 12px 0;
+        background-color: #282875;
+    }
+    .logo {
+        float: left;
+    }
+    .logo > span {
+        vertical-align: middle;
+        letter-spacing: 1px;
+        font-size: 22px;
+        font-family: 'montserratbold', arial, sans-serif;
+    }
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+    }
+    .logo-text-chat {
+        color: #fff;
+    }
+    .menu-bar {
+        float: right;
+    }
+    .story-1 {
+        position: relative;
         text-align: left;
+        padding: 0 15px;
+        background: #fff url('./../images/chittychat-illustration.svg') center top no-repeat;
+        background-size: 100% auto;
+    }
+    .story-1 > div {
+        width: 60%;
+        padding: 50px 0;
+    }
+    .story-1 h1,
+    .story-1 h2,
+    .story-1 h3,
+    .story-1 h4,
+    .story-1 h5 {
+        text-shadow: 4px 4px 0 white, 4px -4px 0 white, -4px -4px 0 white, -4px 4px 0 white, 4px 3px 0 white, 4px -3px 0 white, -4px -3px 0 white, -4px 3px 0 white, 4px 2px 0 white, 4px -2px 0 white, -4px -2px 0 white, -4px 2px 0 white, 4px 1px 0 white, 4px -1px 0 white, -4px -1px 0 white, -4px 1px 0 white, 4px 0px 0 white, 4px 0px 0 white, -4px 0px 0 white, -4px 0px 0 white, 3px 4px 0 white, 3px -4px 0 white, -3px -4px 0 white, -3px 4px 0 white, 3px 3px 0 white, 3px -3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px 2px 0 white, 3px -2px 0 white, -3px -2px 0 white, -3px 2px 0 white, 3px 1px 0 white, 3px -1px 0 white, -3px -1px 0 white, -3px 1px 0 white, 3px 0px 0 white, 3px 0px 0 white, -3px 0px 0 white, -3px 0px 0 white, 2px 4px 0 white, 2px -4px 0 white, -2px -4px 0 white, -2px 4px 0 white, 2px 3px 0 white, 2px -3px 0 white, -2px -3px 0 white, -2px 3px 0 white, 2px 2px 0 white, 2px -2px 0 white, -2px -2px 0 white, -2px 2px 0 white, 2px 1px 0 white, 2px -1px 0 white, -2px -1px 0 white, -2px 1px 0 white, 2px 0px 0 white, 2px 0px 0 white, -2px 0px 0 white, -2px 0px 0 white, 1px 4px 0 white, 1px -4px 0 white, -1px -4px 0 white, -1px 4px 0 white, 1px 3px 0 white, 1px -3px 0 white, -1px -3px 0 white, -1px 3px 0 white, 1px 2px 0 white, 1px -2px 0 white, -1px -2px 0 white, -1px 2px 0 white, 1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white, -1px 1px 0 white, 1px 0px 0 white, 1px 0px 0 white, -1px 0px 0 white, -1px 0px 0 white, 0px 4px 0 white, 0px -4px 0 white, 0px -4px 0 white, 0px 4px 0 white, 0px 3px 0 white, 0px -3px 0 white, 0px -3px 0 white, 0px 3px 0 white, 0px 2px 0 white, 0px -2px 0 white, 0px -2px 0 white, 0px 2px 0 white, 0px 1px 0 white, 0px -1px 0 white, 0px -1px 0 white, 0px 1px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0px 0px 0 white, 0 0 0 white;
+    }
+    .story-1 h1,
+    .story-1 h2,
+    .story-1 h3 {
+        font-size: 34px;
+    }
+    .story-1 h5 {
+        font-size: 26px;
+    }
+    .story-2 {
+        display: none;
+    }
+}
+/* desktop */
+@media only screen and (min-width: 1024px) {
+    .container {
+        max-width: 1280px;
+        padding-right: 15px;
         padding-left: 15px;
     }
-    footer {
-        padding-top: 50px;
+    .story-1 > div {
+        width: 45%;
+        padding: 110px 0;
     }
 }
 /* media query ends */
